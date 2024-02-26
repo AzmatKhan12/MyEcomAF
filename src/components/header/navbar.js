@@ -1,28 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SearchField from "./SearchField";
+
 
 const Navbar = () => {
+
   return (
     <div>
       <nav
-        className="navbar navbar-expand-lg "
+        className="navbar navbar-expand-lg"
         style={{ background: "#e3f2fd" }}
       >
         <div className="container-md">
           <a className="navbar-brand mt-2" href="#">
             Navbar
           </a>
-          <form className="d-flex " role="search">
-            <input
-              className="form-control me-2 "
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+          <SearchField/>
           <button
             className="navbar-toggler"
             type="button"
@@ -35,10 +28,10 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="nav justify-content-center">
-            <div className="collapse navbar-collapse " id="navbarSupportedContent">
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item mt-2">
-                  <Link className="nav-link active" aria-current="page" to="/">
+                  <Link className="nav-link active " aria-current="page" to="/">
                     Home
                   </Link>
                 </li>
@@ -99,13 +92,14 @@ const Navbar = () => {
                 </div>
                 <div className="btn-group">
                 <button type="button" className="btn ">
-                   Mycart<span className="badge text-bg-secondary ms-1"> 4</span>
+                   Cart<span className="badge text-bg-secondary ms-1"> 4</span>
               </button>
                 </div>
               </ul>
             </div>
           </div>
         </div>
+        
       </nav>
     </div>
   );
