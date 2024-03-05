@@ -13,7 +13,9 @@ import Myorder from "./pages/Myorder";
 import Wishlist from "./pages/Wishlist";
 import Myprofile from "./pages/Myprofile";
 import Signup from "./pages/Signup";
-import Modal from "./modal/Modal";
+
+
+
 
 
 const App = () => {
@@ -21,6 +23,7 @@ const App = () => {
     <>
       
       <Navbar />
+      
       <Routes>
       <Route path="/" element=<Home/>/>
         <Route path="contact" element=<Contact /> />

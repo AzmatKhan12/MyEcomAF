@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SearchField from "./SearchField";
 
 
 const Navbar = () => {
+   
+  const [isOpen, setIsopen] = useState(false)
+
+   const toggleHandelar=()=>{
+      setIsopen(!isOpen)
+      
+   }
 
   return (
     <div>
@@ -11,11 +18,14 @@ const Navbar = () => {
         className="navbar navbar-expand-lg"
         style={{ background: "#e3f2fd" }}
       >
-        <div className="container-md">
+        <div className="container-fluid">
           <a className="navbar-brand mt-2" href="#">
             Navbar
           </a>
-          <SearchField/>
+          <div >
+           <SearchField/>
+          </div>
+          
           <button
             className="navbar-toggler"
             type="button"
@@ -24,18 +34,21 @@ const Navbar = () => {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={toggleHandelar}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="nav justify-content-center">
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item mt-2">
+          {!isOpen &&
+          <div className="nav justify-content-center ">
+            
+            <div className="navbar-collapse " id="navbarSupportedContent">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li className="nav-item mt-2 mr-4 ">
                   <Link className="nav-link active " aria-current="page" to="/">
                     Home
                   </Link>
                 </li>
-                <li className="nav-item mt-2">
+                <li className="nav-item mt-2 mr-4">
                   <Link className="nav-link active" aria-current="page" to="about">
                     About
                   </Link>
@@ -44,14 +57,14 @@ const Navbar = () => {
                 <div className="bt-group ">
                   <div className="nav-item dropdown d-flex">
                   
-                    <li className="nav-item btn " roll="button">
+                    <li className="nav-item mt-2 " roll="button">
                       <Link className="nav-link active" to="login" >
                         Login
                       </Link>
                     </li>
                     <button
                       type="button"
-                      className="btn btn-sm btn-outline-success dropdown-toggle dropdown-toggle-split"
+                      className="btn btn-sm btn-outline-success dropdown-toggle dropdown-toggle-split mr-4"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
@@ -91,13 +104,13 @@ const Navbar = () => {
                   </div>
                 </div>
                 <div className="btn-group">
-                <button type="button" className="btn ">
+                <button type="button" className="mt-2 mr-4" >
                    Cart<span className="badge text-bg-secondary ms-1"> 4</span>
               </button>
                 </div>
               </ul>
             </div>
-          </div>
+          </div>}
         </div>
         
       </nav>

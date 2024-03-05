@@ -32,11 +32,11 @@ const Signup = ({loginHandlar}) => {
     <>
     <div className="container-sm text-centre">
     <div className="row justify-content-center">
-      <div className="col-6 mt-5 bg-border-rounded">
+      <div className="col-9 mt-5 bg-border-rounded">
         <form onSubmit={submitHandlar} className="form-control p-5">
           <div className="mb-3">
-            <h3>Sign-Up Page</h3>
-            <label id ="fname" className="form-label">
+            <h1 className='font-bold text-2xl md:text-center md:underline'>Sign-Up Page</h1>
+            <label id ="fname" className="form-label mt-4">
              First Name
             </label>
             <input
@@ -107,10 +107,10 @@ const Signup = ({loginHandlar}) => {
             />
           </div>
         
-          <button type="submit" className="btn btn-primary" >
+          <button type="submit" className=" text-black btn btn-primary" >
             Signup
           </button>
-          <div className="mt-2 form-text ">
+          <div className="mt-2 form-text  hover:text-blue-500 cursor-pointer">
              <div onClick={ShowbtnHandler} > I Have an Account </div>
           </div>
         </form>
